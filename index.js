@@ -52,10 +52,10 @@ server.use((req, res, next) => {
 
 
 const filesExist = fs.existsSync( path.join(__dirname, "files") );
-if( !filesExist ) fs.mkdir( path.join(__dirname, "files") );
+if( !filesExist ) fs.mkdir( path.join(__dirname, "files"), ()=>{} );
 
 const backupsExist = fs.existsSync( path.join(__dirname, "backups") );
-if( !backupsExist ) fs.mkdir( path.join(__dirname, "backups") );
+if( !backupsExist ) fs.mkdir( path.join(__dirname, "backups"), ()=>{} );
 
 const httpServer = http.createServer(server);
 httpServer.listen(3005, () =>{
