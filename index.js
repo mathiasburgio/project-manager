@@ -24,7 +24,7 @@ server.use(session({
     saveUninitialized: false,
     cookie: {
         maxAge : (86400 * 1000),//la sesion dura 24hs
-        secure : !(process.env.NODE_ENV == 'development') // true ssl
+        //secure : !(process.env.NODE_ENV == 'development') // true ssl
     },
     store: new FileStore({logFn: function(){}})//loFn: ... es para q no joda buscando sessiones q han sido cerradas
 }));
